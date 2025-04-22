@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				eco: {
+					green: "#2D8B75",
+					"green-light": "#4DB299",
+					"green-dark": "#1A6355",
+					blue: "#3C8DAD",
+					"blue-light": "#60B2D1",
+					"blue-dark": "#2A6B85",
+					earth: "#D2B48C",
+					"earth-light": "#E8D4B9",
+					"earth-dark": "#A68D68",
 				}
 			},
 			borderRadius: {
@@ -84,11 +96,67 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'scale-out': {
+					from: { transform: 'scale(1)', opacity: '1' },
+					to: { transform: 'scale(0.95)', opacity: '0' }
+				},
+				'slide-in': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0)' }
+				},
+				'slide-out': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'wave': {
+					'0%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' },
+					'100%': { transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out',
+				'scale-out': 'scale-out 0.2s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out',
+				'slide-out': 'slide-out 0.3s ease-out',
+				'wave': 'wave 2s ease-in-out infinite',
+				'wave-slow': 'wave 3s ease-in-out infinite',
+				'wave-fast': 'wave 1.5s ease-in-out infinite'
 			}
 		}
 	},
