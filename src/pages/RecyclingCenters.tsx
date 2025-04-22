@@ -1,7 +1,9 @@
 
 import React from 'react';
-import { Recycle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Recycle, Home } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -40,9 +42,17 @@ const RecyclingCenters = () => {
       
       <main className="flex-grow">
         <section className="py-12 eco-container">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Recycle className="h-8 w-8 text-eco-green" />
-            <h1 className="eco-heading">Recycling Centers</h1>
+          <div className="mb-6">
+            <Button asChild variant="outline" className="mb-4">
+              <Link to="/" className="flex items-center gap-2">
+                <Home className="w-4 h-4" />
+                Back to Home
+              </Link>
+            </Button>
+            <div className="flex items-center justify-center gap-3">
+              <Recycle className="h-8 w-8 text-eco-green" />
+              <h1 className="eco-heading">Recycling Centers</h1>
+            </div>
           </div>
           
           <p className="text-center mb-12 eco-text max-w-2xl mx-auto">

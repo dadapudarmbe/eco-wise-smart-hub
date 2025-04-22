@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Recycle } from 'lucide-react';
+import { Recycle, Home } from 'lucide-react';
 
 const NotFound = () => {
   return (
@@ -15,8 +15,11 @@ const NotFound = () => {
         <p className="text-xl text-gray-600 mb-8">
           Sorry, we couldn't find the page you're looking for.
         </p>
-        <Button asChild className="bg-eco-green hover:bg-eco-green-dark">
-          <Link to="/">Return to Home</Link>
+        <Button asChild className="bg-eco-green hover:bg-eco-green-dark mb-4">
+          <Link to="/" className="flex items-center gap-2">
+            <Home className="w-5 h-5" />
+            Return to Home
+          </Link>
         </Button>
       </div>
     </div>

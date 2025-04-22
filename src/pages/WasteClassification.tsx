@@ -1,6 +1,7 @@
 
 import React, { useState, useRef } from 'react';
-import { Camera, Upload } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Camera, Upload, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -131,7 +132,15 @@ const WasteClassification = () => {
       
       <main className="flex-grow">
         <section className="py-12 eco-container">
-          <h1 className="eco-heading text-center">Waste Classification</h1>
+          <div className="mb-6">
+            <Button asChild variant="outline" className="mb-4">
+              <Link to="/" className="flex items-center gap-2">
+                <Home className="w-4 h-4" />
+                Back to Home
+              </Link>
+            </Button>
+            <h1 className="eco-heading text-center">Waste Classification</h1>
+          </div>
           <p className="text-center mb-8 eco-text max-w-2xl mx-auto">
             Upload or capture an image of waste items to get instant classification and proper disposal guidance.
           </p>
