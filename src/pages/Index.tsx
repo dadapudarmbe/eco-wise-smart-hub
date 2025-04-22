@@ -6,7 +6,51 @@ import FeatureCard from '@/components/FeatureCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+// Helper to shuffle an array (Fisher-Yates)
+function shuffle<T>(array: T[]): T[] {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const featureCards = [
+  {
+    title: "Waste Classification",
+    description: "Upload or capture images of waste items for instant classification and proper disposal guidance.",
+    icon: Camera,
+    link: "/waste-classification",
+    iconColor: "text-eco-green",
+  },
+  {
+    title: "EcoChat Bot",
+    description: "Get instant answers to your sustainability questions from our specialized eco-friendly chatbot.",
+    icon: MessageCircle,
+    link: "/eco-chatbot",
+    iconColor: "text-eco-blue",
+  },
+  {
+    title: "Energy Tracker",
+    description: "Monitor your energy consumption with insightful visualizations and receive tips to reduce usage.",
+    icon: Lightbulb,
+    link: "/energy-tracker",
+    iconColor: "text-eco-earth",
+  },
+  {
+    title: "Recycling Centers",
+    description: "Discover recycling centers near you and learn about their accepted materials and operating hours.",
+    icon: Recycle,
+    link: "/recycling-centers",
+    iconColor: "text-eco-blue-dark",
+  },
+];
+
 const Index = () => {
+  // Shuffle cards each time the component renders
+  const shuffledFeatures = React.useMemo(() => shuffle(featureCards), []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -39,41 +83,13 @@ const Index = () => {
           <h2 className="eco-heading text-center mb-12">Our Features</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <FeatureCard 
-              title="Waste Classification" 
-              description="Upload or capture images of waste items for instant classification and proper disposal guidance."
-              icon={Camera}
-              link="/waste-classification"
-              iconColor="text-eco-green"
-              delay={100}
-            />
-            
-            <FeatureCard 
-              title="EcoChat Bot" 
-              description="Get instant answers to your sustainability questions from our specialized eco-friendly chatbot."
-              icon={MessageCircle}
-              link="/eco-chatbot"
-              iconColor="text-eco-blue"
-              delay={200}
-            />
-            
-            <FeatureCard 
-              title="Energy Tracker" 
-              description="Monitor your energy consumption with insightful visualizations and receive tips to reduce usage."
-              icon={Lightbulb}
-              link="/energy-tracker"
-              iconColor="text-eco-earth"
-              delay={300}
-            />
-            
-            <FeatureCard 
-              title="Recycling Centers" 
-              description="Discover recycling centers near you and learn about their accepted materials and operating hours."
-              icon={Recycle}
-              link="/recycling-centers"
-              iconColor="text-eco-blue-dark"
-              delay={400}
-            />
+            {shuffledFeatures.map((feature, idx) => (
+              <FeatureCard 
+                key={feature.title}
+                {...feature}
+                delay={120 * idx}
+              />
+            ))}
           </div>
         </section>
 
