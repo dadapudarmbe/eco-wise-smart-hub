@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Recycle, Camera, ChatCircle, Energy } from 'lucide-react';
+import { Recycle, Camera, MessageCircle, Lightbulb } from 'lucide-react';
 import FeatureCard from '@/components/FeatureCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -51,7 +51,7 @@ const Index = () => {
             <FeatureCard 
               title="EcoChat Bot" 
               description="Get instant answers to your sustainability questions from our specialized eco-friendly chatbot."
-              icon={ChatCircle}
+              icon={MessageCircle}
               link="/eco-chatbot"
               iconColor="text-eco-blue"
               delay={200}
@@ -60,7 +60,7 @@ const Index = () => {
             <FeatureCard 
               title="Energy Tracker" 
               description="Monitor your energy consumption with insightful visualizations and receive tips to reduce usage."
-              icon={Energy}
+              icon={Lightbulb}
               link="/energy-tracker"
               iconColor="text-eco-earth"
               delay={300}

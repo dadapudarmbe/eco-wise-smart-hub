@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
-import { Energy, ChartBar } from 'lucide-react';
+import { Lightbulb, BarChart as BarChartIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -127,7 +127,7 @@ const EnergyTracker = () => {
       <main className="flex-grow">
         <section className="py-12 eco-container">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Energy className="h-8 w-8 text-eco-green" />
+            <Lightbulb className="h-8 w-8 text-eco-green" />
             <h1 className="eco-heading">Energy Consumption Tracker</h1>
           </div>
           
@@ -138,11 +138,11 @@ const EnergyTracker = () => {
           <Tabs defaultValue="dashboard" className="w-full">
             <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
               <TabsTrigger value="dashboard" className="text-lg py-3">
-                <ChartBar className="mr-2 h-5 w-5" />
+                <BarChartIcon className="mr-2 h-5 w-5" />
                 Dashboard
               </TabsTrigger>
               <TabsTrigger value="input" className="text-lg py-3">
-                <Energy className="mr-2 h-5 w-5" />
+                <Lightbulb className="mr-2 h-5 w-5" />
                 Input Data
               </TabsTrigger>
             </TabsList>

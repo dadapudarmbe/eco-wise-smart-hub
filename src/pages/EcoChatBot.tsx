@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChatCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -16,7 +16,7 @@ const EcoChatBot = () => {
       <main className="flex-grow">
         <section className="py-12 eco-container">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <ChatCircle className="h-8 w-8 text-eco-green" />
+            <MessageCircle className="h-8 w-8 text-eco-green" />
             <h1 className="eco-heading">EcoChat Bot</h1>
           </div>
           
@@ -40,7 +40,7 @@ const EcoChatBot = () => {
                 {/* This iframe will be replaced with your actual chatbot integration */}
                 <div className="w-full h-full flex items-center justify-center border-2 border-dashed border-muted rounded-lg">
                   <div className="text-center p-4">
-                    <ChatCircle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                    <MessageCircle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
                     <p className="text-muted-foreground mb-2">Chatbot integration placeholder</p>
                     <p className="text-sm text-muted-foreground">
                       Replace with your chatbot URL:<br />
