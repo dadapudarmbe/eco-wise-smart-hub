@@ -1,10 +1,8 @@
 
 import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'sonner';
-import { Home } from 'lucide-react';
+import { Home, Recycle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import RecyclingCenters from './RecyclingCenters';
 
 const WasteClassification = () => {
   const navigate = useNavigate();
@@ -16,10 +14,7 @@ const WasteClassification = () => {
   }, [navigate]);
   
   useEffect(() => {
-    // Add keyboard listener
     window.addEventListener('keydown', handleKeyPress);
-    
-    // Remove keyboard listener on cleanup
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
@@ -38,7 +33,7 @@ const WasteClassification = () => {
         </Button>
       </div>
       
-      <div className="mb-12">
+      <div className="mb-8">
         <iframe 
           src="https://model-40w9.onrender.com"
           className="w-full h-[600px] border-0"
@@ -46,7 +41,15 @@ const WasteClassification = () => {
         />
       </div>
       
-      <RecyclingCenters />
+      <div className="flex justify-center mb-12">
+        <Button
+          onClick={() => navigate('/recycling-centers')}
+          className="flex items-center gap-2 bg-eco-green hover:bg-eco-green-dark"
+        >
+          <Recycle className="w-5 h-5" />
+          Find Recycling Centers
+        </Button>
+      </div>
     </div>
   );
 };
