@@ -19,12 +19,6 @@ const WasteClassification = () => {
     // Add keyboard listener
     window.addEventListener('keydown', handleKeyPress);
     
-    // Show a loading toast
-    toast.loading('Redirecting to waste classification model...');
-    
-    // Open the classification model in a new window
-    window.open('https://model-40w9.onrender.com', '_blank');
-    
     // Remove keyboard listener on cleanup
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
@@ -44,11 +38,12 @@ const WasteClassification = () => {
         </Button>
       </div>
       
-      <div className="text-center mb-12">
-        <p className="text-lg text-gray-600 mb-8">
-          The waste classification model has been opened in a new tab.
-          After classification, check out these recycling centers:
-        </p>
+      <div className="mb-12">
+        <iframe 
+          src="https://model-40w9.onrender.com"
+          className="w-full h-[600px] border-0"
+          title="Waste Classification Model"
+        />
       </div>
       
       <RecyclingCenters />
